@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <style>
+       *{
+           padding: 0;
+           margin: 0;
+       }
+       div{
+           background-color: bisque;
+           width: 350px;
+           height: 160px;
+           margin: 180px auto;
+       }
+       p{
+           margin-top: 10px;
+           margin-bottom: 20px;
+       }
+       button{
+           width: 50px;
+           height: 20px;
+           line-height: 20px;
+           align-self: auto;
+           margin-left: 270px;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>注册</h2>
+        <p>用户名: <input type="text" class="username"></p>
+        <p>密&emsp;码: <input type="password" class="password"></p>
+        <button>注册</button>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $("button").on("click",()=>{
+        $.get("http://localhost:3000/register",{
+            username:$(".username").val(),
+            password:$(".password").val(),
+        },function(res){
+            console.log(res);
+            if (res == "注册成功") {
+                window.location.href="./login.html"
+            }
+        })
+    })
+</script>
+</html>
