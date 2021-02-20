@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+<body>
+    首页
+    <button>退出</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $("button").on("click",function(){
+        let bol = confirm("您要退出嘛?")
+        if(bol){
+            window.location.href="./login.html"
+        }
+    })
+</script>
+</html>
